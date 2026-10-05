@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrenz Agency | Digital & AI Innovation Studio</title>
+    <meta name="description" content="Wrenz Agency crafts high-performance web applications, AI integration, and cutting-edge visual experiences with futuristic precision.">
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:title" content="Wrenz Agency | Mission, Who is Wren & Projects">
+    <meta property="og:description" content="Wrenz Agency: Mission, Who is Wren, Projects, and Contact Information.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-black text-white antialiased overflow-x-hidden">
+
+    <!-- Ambient Grid Canvas Background -->
+    <canvas id="ambient-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+        <div class="nav-container max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#mission" class="brand-logo flex items-center gap-3 text-decoration-none group">
+                <span class="logo-symbol flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-950/80 border border-emerald-500/30 group-hover:border-emerald-400 transition-all duration-300">
+                    <span class="w-3 h-3 bg-neon-green rounded-sm transform rotate-45 group-hover:scale-125 transition-transform"></span>
+                </span>
+                <span class="logo-text font-syne text-2xl font-bold tracking-tight text-white">
+                    WRENZ<span class="text-neon-green font-extrabold">.</span>
+                </span>
+            </a>
+
+            <!-- Desktop Nav Links (Top of page links to all main sections) -->
+            <nav class="hidden md:flex items-center gap-8 nav-links-desktop font-mono">
+                <a href="#mission" class="nav-link text-xs uppercase tracking-wider font-semibold text-zinc-300 hover:text-neon-green transition-colors">Mission</a>
+                <a href="#wren" class="nav-link text-xs uppercase tracking-wider font-semibold text-zinc-300 hover:text-neon-green transition-colors">Who is Wren</a>
+                <a href="#projects" class="nav-link text-xs uppercase tracking-wider font-semibold text-zinc-300 hover:text-neon-green transition-colors">Projects</a>
+                <a href="#contact" class="nav-link text-xs uppercase tracking-wider font-semibold text-zinc-300 hover:text-neon-green transition-colors">Contact</a>
+            </nav>
+
+            <!-- Desktop Header CTA & Animated Menu Trigger -->
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:inline-flex btn-primary items-center gap-2 px-6 py-2.5 rounded-full font-medium text-xs font-mono uppercase tracking-wider text-black bg-neon-green hover:bg-emerald-300 transition-all duration-300 hover:shadow-neon">
+                    <span>Contact Us</span>
+                    <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+
+                <!-- Animated Hamburger Menu Toggle Button -->
+                <button id="menu-toggle" class="menu-toggle flex flex-col justify-center items-center w-12 h-12 rounded-full bg-emerald-950/40 border border-emerald-500/20 hover:border-emerald-400/60 focus:outline-none transition-all duration-300" aria-label="Toggle Navigation Menu">
+                    <span class="hamburger-line line-1 w-5 h-0.5 bg-emerald-400 my-0.5 transition-transform duration-300"></span>
+                    <span class="hamburger-line line-2 w-5 h-0.5 bg-emerald-300 my-0.5 transition-opacity duration-300"></span>
+                    <span class="hamburger-line line-3 w-5 h-0.5 bg-emerald-400 my-0.5 transition-transform duration-300"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fullscreen Animated Menu Overlay -->
+    <div id="full-menu-overlay" class="full-menu-overlay fixed inset-0 z-40 flex flex-col justify-between p-8 md:p-16 opacity-0 pointer-events-none transition-all duration-500">
+        <div class="overlay-bg absolute inset-0 bg-black/95 backdrop-blur-2xl -z-10"></div>
+        <div class="overlay-glow absolute -top-40 -right-40 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+        
+        <div class="overlay-top flex justify-between items-center max-w-7xl mx-auto w-full pt-12">
+            <span class="text-xs uppercase tracking-widest text-emerald-500 font-mono">/// WRENZ NAVIGATION HUB</span>
+            <span class="text-xs text-zinc-500 font-mono">ILE-DE-FRANCE</span>
+        </div>
+
+        <div class="overlay-main max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 my-auto items-center">
+            <nav class="lg:col-span-8 flex flex-col gap-5">
+                <a href="#mission" class="menu-overlay-link text-4xl sm:text-6xl md:text-7xl font-syne font-bold text-zinc-400 hover:text-neon-green transition-all duration-300 flex items-center justify-between group">
+                    <span>01 // Mission</span>
+                    <span class="text-sm font-mono opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all text-emerald-400">✦ PURPOSE</span>
+                </a>
+                <a href="#wren" class="menu-overlay-link text-4xl sm:text-6xl md:text-7xl font-syne font-bold text-zinc-400 hover:text-neon-green transition-all duration-300 flex items-center justify-between group">
+                    <span>02 // Who is Wren</span>
+                    <span class="text-sm font-mono opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all text-emerald-400">✦ ABOUT</span>
+                </a>
+                <a href="#projects" class="menu-overlay-link text-4xl sm:text-6xl md:text-7xl font-syne font-bold text-zinc-400 hover:text-neon-green transition-all duration-300 flex items-center justify-between group">
+                    <span>03 // Projects</span>
+                    <span class="text-sm font-mono opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all text-emerald-400">✦ SHOWCASE</span>
+                </a>
+                <a href="#contact" class="menu-overlay-link text-4xl sm:text-6xl md:text-7xl font-syne font-bold text-emerald-400 hover:text-neon-green transition-all duration-300 flex items-center justify-between group">
+                    <span>04 // Contact</span>
+                    <span class="text-sm font-mono opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all text-emerald-400">✦ REACH OUT</span>
+                </a>
+            </nav>
+
+            <div class="lg:col-span-4 rounded-square-card p-8 flex flex-col gap-6">
+                <div>
+                    <h4 class="text-xs uppercase tracking-wider text-emerald-400 font-mono mb-1">Direct Contact Hub</h4>
+                    <p class="text-zinc-400 text-xs font-mono">Jump straight to all contact details at the bottom section of the page.</p>
+                </div>
+                <div class="space-y-3 font-mono text-xs">
+                    <div class="p-3 rounded-xl bg-black/60 border border-emerald-500/20 flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-neon-green"></i>
+                        <span class="text-zinc-200">Ile-de-France (France)</span>
+                    </div>
+                    <div class="p-3 rounded-xl bg-black/60 border border-emerald-500/20 flex items-center gap-3">
+                        <i class="fa-regular fa-envelope text-neon-green"></i>
+                        <span class="text-zinc-200">contact@wrenzagency.com</span>
+                    </div>
+                </div>
+                <a href="#contact" class="w-full py-3 rounded-xl bg-neon-green text-black font-syne font-bold text-xs uppercase tracking-wider text-center block hover:bg-emerald-300 transition-colors">
+                    Go To Bottom Contact Section
+                </a>
+            </div>
+        </div>
+
+        <div class="overlay-bottom max-w-7xl mx-auto w-full flex justify-between items-center pt-6 border-t border-zinc-900 text-zinc-600 text-xs font-mono">
+            <span>© WRENZ AGENCY. ALL RIGHTS RESERVED.</span>
+            <span class="text-emerald-500">ILE-DE-FRANCE (FRANCE)</span>
+        </div>
+    </div>
+
+    <main>
+        <!-- SECTION 1: MISSION -->
+        <section id="mission" class="section-padding min-h-screen pt-36 sm:pt-44 flex items-center justify-center overflow-hidden">
+            <div class="glow-orb top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+            
+            <div class="container-custom relative z-10 text-center">
+                <!-- Tagline Badge -->
+                <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-emerald-950/70 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-mono tracking-wider uppercase mb-8 shadow-neon-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-neon-green animate-pulse"></span>
+                    <span>WRENZ AGENCY</span>
+                    <span class="text-zinc-600">|</span>
+                    <span class="text-emerald-400 font-semibold">SECTION 01: MISSION</span>
+                </div>
+
+                <!-- Main Mission Headline -->
+                <h1 class="font-syne text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-tight sm:leading-none mb-10">
+                    Designing <span class="gradient-text-emerald">Digital Innovation</span> &<br class="hidden sm:inline">
+                    <span class="gradient-text-neon">Cutting-Edge Web Experiences</span>.
+                </h1>
+
+                <!-- Mission Card Block (Nice Rounded Square Hero Container) -->
+                <div class="max-w-4xl mx-auto rounded-square-card text-center mb-16 p-8 sm:p-12">
+                    <p class="text-zinc-200 text-lg sm:text-2xl font-normal leading-relaxed">
+                        Wrenz Agency is dedicated to crafting high-performance digital solutions, seamless visual design systems, and modern web applications with speed and precision.
+                    </p>
+                </div>
+
+                <!-- Mission Pillars (3 Rounded Square Cards) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <div class="rounded-square-card group">
+                        <div class="rounded-square-icon mb-6">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest block mb-2">01 // PILLAR</span>
+                        <h3 class="font-syne text-xl font-bold text-white mb-2">Mission Pillar 01</h3>
+                        <p class="text-zinc-500 text-xs font-mono">To be added</p>
+                    </div>
+
+                    <div class="rounded-square-card group">
+                        <div class="rounded-square-icon mb-6">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest block mb-2">02 // PILLAR</span>
+                        <h3 class="font-syne text-xl font-bold text-white mb-2">Mission Pillar 02</h3>
+                        <p class="text-zinc-500 text-xs font-mono">To be added</p>
+                    </div>
+
+                    <div class="rounded-square-card group">
+                        <div class="rounded-square-icon mb-6">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest block mb-2">03 // PILLAR</span>
+                        <h3 class="font-syne text-xl font-bold text-white mb-2">Mission Pillar 03</h3>
+                        <p class="text-zinc-500 text-xs font-mono">To be added</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: WHO IS WREN -->
+        <section id="wren" class="section-padding bg-zinc-950/60 border-t border-zinc-900">
+            <div class="container-custom">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="section-tag">/// SECTION 02: WHO IS WREN</span>
+                    <h2 class="font-syne text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">
+                        Who is <span class="gradient-text-neon">Wren</span>
+                    </h2>
+                    <p class="text-zinc-400 text-base sm:text-lg">
+                        Learn about Wren behind Wrenz Agency.
+                    </p>
+                </div>
+
+                <!-- Main Who is Wren Layout in Rounded Square Cards -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
+                    <!-- Left: Placeholder for Wren's Photo in a Rounded Square Card -->
+                    <div class="lg:col-span-5 flex">
+                        <div class="card-placeholder w-full group flex flex-col justify-center items-center">
+                            <div class="w-24 h-24 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
+                                <i class="fa-regular fa-user text-4xl"></i>
+                            </div>
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">PHOTO PLACEHOLDER</span>
+                            <h3 class="font-syne text-xl font-bold text-zinc-400 group-hover:text-white transition-colors">Photo of Wren</h3>
+                            <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Who is Wren Bio Details in Rounded Square Card -->
+                    <div class="lg:col-span-7 flex">
+                        <div class="rounded-square-card w-full p-8 sm:p-10 flex flex-col justify-center space-y-6">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 font-mono text-xs uppercase tracking-wider w-fit">
+                                <i class="fa-solid fa-id-card text-neon-green"></i>
+                                <span>WHO IS WREN</span>
+                            </div>
+
+                            <h3 class="font-syne text-2xl sm:text-4xl font-bold text-white">
+                                About <span class="gradient-text-emerald">Wren</span>
+                            </h3>
+
+                            <p class="text-zinc-300 text-base sm:text-lg leading-relaxed font-mono">
+                                Information about Wren to be added.
+                            </p>
+
+                            <div class="p-4 rounded-xl bg-black/40 border border-dashed border-emerald-500/30 font-mono text-xs text-zinc-500">
+                                <span class="text-emerald-400 font-bold block mb-1">/// NOTE:</span>
+                                Additional bio, details, and background story for Wren will be inserted here.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wren's Feature Cards (3 Harmonious Empty Rounded Square Placeholders) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="card-placeholder group">
+                        <div class="w-16 h-16 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
+                            <i class="fa-solid fa-circle-info text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">DETAIL 01</span>
+                        <h4 class="font-syne text-lg font-bold text-zinc-400 group-hover:text-white transition-colors">Wren Detail 01</h4>
+                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
+                    </div>
+
+                    <div class="card-placeholder group">
+                        <div class="w-16 h-16 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
+                            <i class="fa-solid fa-circle-info text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">DETAIL 02</span>
+                        <h4 class="font-syne text-lg font-bold text-zinc-400 group-hover:text-white transition-colors">Wren Detail 02</h4>
+                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
+                    </div>
+
+                    <div class="card-placeholder group">
+                        <div class="w-16 h-16 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
+                            <i class="fa-solid fa-circle-info text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">DETAIL 03</span>
+                        <h4 class="font-syne text-lg font-bold text-zinc-400 group-hover:text-white transition-colors">Wren Detail 03</h4>
+                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROJECTS -->
+        <section id="projects" class="section-padding border-t border-zinc-900">
+            <div class="container-custom">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="section-tag">/// SECTION 03: PROJECTS</span>
+                    <h2 class="font-syne text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">
+                        Previous <span class="gradient-text-emerald">Projects</span>
+                    </h2>
+                    <p class="text-zinc-400 text-base sm:text-lg">
+                        Our portfolio of delivered applications and client work.
+                    </p>
+                </div>
+
+                <!-- Projects Grid (3 Harmonious Empty Placeholder Rounded Squares) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Project Placeholder 1 -->
+                    <div class="card-placeholder group">
+                        <div class="w-20 h-20 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
+                            <i class="fa-solid fa-layer-group text-3xl"></i>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">PROJECT 01</span>
+                        <h3 class="font-syne text-xl font-bold text-zinc-400 group-hover:text-white transition-colors">Project 01</h3>
+                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
+                    </div>
+
+                    <!-- Project Placeholder 2 -->
+                    <div class="card-placeholder group">
+                        <div class="w-20 h-20 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
+                            <i class="fa-solid fa-layer-group text-3xl"></i>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">PROJECT 02</span>
+                        <h3 class="font-syne text-xl font-bold text-zinc-400 group-hover:text-white transition-colors">Project 02</h3>
+                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
+                    </div>
+
+                    <!-- Project Placeholder 3 -->
+                    <div class="card-placeholder group">
+                        <div class="w-20 h-20 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
+                            <i class="fa-solid fa-layer-group text-3xl"></i>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">PROJECT 03</span>
+                        <h3 class="font-syne text-xl font-bold text-zinc-400 group-hover:text-white transition-colors">Project 03</h3>
+                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ALL CONTACT INFORMATION (BOTTOM SECTION OF THE PAGE) -->
+        <section id="contact" class="section-padding bg-zinc-950/90 border-t border-zinc-900">
+            <div class="container-custom">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="section-tag">/// SECTION 04: CONTACT INFORMATION</span>
+                    <h2 class="font-syne text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">
+                        Contact <span class="gradient-text-neon">Wrenz Agency</span>
+                    </h2>
+                    <p class="text-zinc-400 text-base sm:text-lg">
+                        Get in touch with our team for inquiries and project discussions.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                    <!-- Left: All Contact Details in Nice Rounded Square Cards -->
+                    <div class="lg:col-span-6 space-y-5">
+                        <div class="rounded-square-card p-6 flex items-center gap-5 group">
+                            <div class="rounded-square-icon shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-emerald-400 font-mono uppercase tracking-wider mb-1">LOCATION</div>
+                                <div class="text-white text-lg font-bold font-syne">Ile-de-France (France)</div>
+                            </div>
+                        </div>
+
+                        <div class="rounded-square-card p-6 flex items-center gap-5 group">
+                            <div class="rounded-square-icon shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-emerald-400 font-mono uppercase tracking-wider mb-1">PHONE</div>
+                                <div class="text-white text-lg font-bold font-syne">+33 7xxxxxxxx</div>
+                            </div>
+                        </div>
+
+                        <div class="rounded-square-card p-6 flex items-center gap-5 group">
+                            <div class="rounded-square-icon shrink-0">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-emerald-400 font-mono uppercase tracking-wider mb-1">EMAIL</div>
+                                <div class="text-white text-lg font-bold font-syne">contact@wrenzagency.com</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Direct Message Form inside Rounded Square Card Container -->
+                    <div class="lg:col-span-6 rounded-square-card p-8 sm:p-10">
+                        <h3 class="font-syne text-2xl font-bold text-white mb-2">Send A Message</h3>
+                        <p class="text-zinc-400 text-xs font-mono mb-6">Fill out the form below to contact us.</p>
+
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="user-name" class="block text-xs font-mono text-zinc-400 mb-2">YOUR NAME</label>
+                                <input type="text" id="user-name" required placeholder="Name..." class="w-full px-4 py-3.5 rounded-xl bg-black/80 border border-zinc-800 text-white text-sm focus:outline-none focus:border-emerald-400 transition-colors font-mono">
+                            </div>
+
+                            <div>
+                                <label for="user-email" class="block text-xs font-mono text-zinc-400 mb-2">EMAIL ADDRESS</label>
+                                <input type="email" id="user-email" required placeholder="email@example.com" class="w-full px-4 py-3.5 rounded-xl bg-black/80 border border-zinc-800 text-white text-sm focus:outline-none focus:border-emerald-400 transition-colors font-mono">
+                            </div>
+
+                            <div>
+                                <label for="user-message" class="block text-xs font-mono text-zinc-400 mb-2">MESSAGE</label>
+                                <textarea id="user-message" rows="4" required placeholder="Your message..." class="w-full px-4 py-3.5 rounded-xl bg-black/80 border border-zinc-800 text-white text-sm focus:outline-none focus:border-emerald-400 transition-colors font-mono"></textarea>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-neon-green text-black font-syne font-bold text-sm uppercase tracking-wider hover:bg-emerald-300 transition-all duration-300 shadow-neon flex items-center justify-center gap-3">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+
+                        <div id="form-success" class="hidden mt-6 p-6 rounded-2xl bg-emerald-950/90 border border-emerald-400 text-center">
+                            <i class="fa-solid fa-circle-check text-neon-green text-4xl mb-3"></i>
+                            <h4 class="font-syne text-xl font-bold text-white">Message Sent</h4>
+                            <p class="text-zinc-300 text-xs font-mono mt-2">Thank you. Your message has been sent successfully.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-zinc-900">
+        <div class="container-custom flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-950 border border-emerald-500/30 flex items-center justify-center">
+                    <span class="w-2.5 h-2.5 bg-neon-green rounded-sm transform rotate-45"></span>
+                </span>
+                <span class="font-syne text-lg font-bold tracking-tight text-white">
+                    WRENZ<span class="text-neon-green">.</span>
+                </span>
+            </div>
+
+            <div class="flex gap-8 text-xs font-mono text-zinc-400">
+                <a href="#mission" class="hover:text-neon-green transition-colors">Mission</a>
+                <a href="#wren" class="hover:text-neon-green transition-colors">Who is Wren</a>
+                <a href="#projects" class="hover:text-neon-green transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-neon-green transition-colors">Contact</a>
+            </div>
+
+            <p class="text-xs text-zinc-600 font-mono">© Wrenz Agency. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript File -->
+    <script src="js/main.js"></script>
+</body>
+</html>
