@@ -1,429 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wrenz Agency | Digital & AI Innovation Studio</title>
-    <meta name="description" content="Wrenz Agency crafts high-performance web applications, AI integration, and cutting-edge visual experiences with futuristic precision.">
-    
-    <!-- Open Graph / Meta -->
-    <meta property="og:title" content="Wrenz Agency | Mission, Who is Wren & Projects">
-    <meta property="og:description" content="Wrenz Agency: Mission, Who is Wren, Projects, and Contact Information.">
-    <meta property="og:type" content="website">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portail des agents IA développés avec Microsoft Copilot Studio — Prospectives. Découvrez et accédez aux assistants intelligents de l'entreprise.">
+  <meta name="theme-color" content="#0c1426">
+  <title>Agents IA — Copilot Studio | Prospectives IA</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234A90D9'/><text y='70' x='15' font-size='60' fill='white' font-family='sans-serif' font-weight='bold'>IA</text></svg>">
 </head>
-<body class="bg-black text-white antialiased overflow-x-hidden">
+<body>
 
-    <!-- Ambient Grid Canvas Background -->
-    <canvas id="ambient-canvas"></canvas>
-
-    <!-- Header Navigation -->
-    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
-        <div class="nav-container max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#mission" class="brand-logo flex items-center gap-3 text-decoration-none group">
-                <span class="logo-symbol flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-950/80 border border-emerald-500/30 group-hover:border-emerald-400 transition-all duration-300">
-                    <span class="w-3 h-3 bg-neon-green rounded-sm transform rotate-45 group-hover:scale-125 transition-transform"></span>
-                </span>
-                <span class="logo-text font-syne text-2xl font-bold tracking-tight text-white">
-                    WRENZ<span class="text-neon-green font-extrabold">.</span>
-                </span>
-            </a>
-
-            <!-- Desktop Nav Links (Top of page links to all main sections) -->
-            <nav class="hidden md:flex items-center gap-8 nav-links-desktop font-mono">
-                <a href="#mission" class="nav-link text-xs uppercase tracking-wider font-semibold text-zinc-300 hover:text-neon-green transition-colors">Mission</a>
-                <a href="#wren" class="nav-link text-xs uppercase tracking-wider font-semibold text-zinc-300 hover:text-neon-green transition-colors">Who is Wren</a>
-                <a href="#projects" class="nav-link text-xs uppercase tracking-wider font-semibold text-zinc-300 hover:text-neon-green transition-colors">Projects</a>
-                <a href="#contact" class="nav-link text-xs uppercase tracking-wider font-semibold text-zinc-300 hover:text-neon-green transition-colors">Contact</a>
-            </nav>
-
-            <!-- Desktop Header CTA & Animated Menu Trigger -->
-            <div class="flex items-center gap-4">
-                <a href="#contact" class="hidden sm:inline-flex btn-primary items-center gap-2 px-6 py-2.5 rounded-full font-medium text-xs font-mono uppercase tracking-wider text-black bg-neon-green hover:bg-emerald-300 transition-all duration-300 hover:shadow-neon">
-                    <span>Contact Us</span>
-                    <i class="fa-solid fa-arrow-down text-xs"></i>
-                </a>
-
-                <!-- Animated Hamburger Menu Toggle Button -->
-                <button id="menu-toggle" class="menu-toggle flex flex-col justify-center items-center w-12 h-12 rounded-full bg-emerald-950/40 border border-emerald-500/20 hover:border-emerald-400/60 focus:outline-none transition-all duration-300" aria-label="Toggle Navigation Menu">
-                    <span class="hamburger-line line-1 w-5 h-0.5 bg-emerald-400 my-0.5 transition-transform duration-300"></span>
-                    <span class="hamburger-line line-2 w-5 h-0.5 bg-emerald-300 my-0.5 transition-opacity duration-300"></span>
-                    <span class="hamburger-line line-3 w-5 h-0.5 bg-emerald-400 my-0.5 transition-transform duration-300"></span>
-                </button>
-            </div>
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__container">
+      <a href="#" class="nav__logo" aria-label="Prospectives - Accueil">
+        <div class="nav__logo-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
         </div>
-    </header>
+        Prospectives <span style="color: var(--blue); font-weight: 400; margin-left: 2px;">IA</span>
+      </a>
 
-    <!-- Fullscreen Animated Menu Overlay -->
-    <div id="full-menu-overlay" class="full-menu-overlay fixed inset-0 z-40 flex flex-col justify-between p-8 md:p-16 opacity-0 pointer-events-none transition-all duration-500">
-        <div class="overlay-bg absolute inset-0 bg-black/95 backdrop-blur-2xl -z-10"></div>
-        <div class="overlay-glow absolute -top-40 -right-40 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
-        
-        <div class="overlay-top flex justify-between items-center max-w-7xl mx-auto w-full pt-12">
-            <span class="text-xs uppercase tracking-widest text-emerald-500 font-mono">/// WRENZ NAVIGATION HUB</span>
-            <span class="text-xs text-zinc-500 font-mono">ILE-DE-FRANCE</span>
-        </div>
+      <div class="nav__links" id="nav-links">
+        <a href="#accueil" class="nav__link active">Accueil</a>
+        <a href="#agents" class="nav__link">Agents</a>
+        <a href="#sharepoint" class="nav__link">SharePoint</a>
+        <a href="#demos" class="nav__link">Démos</a>
+        <a href="#nouvelles" class="nav__link">Nouvelles IA</a>
+      </div>
 
-        <div class="overlay-main max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 my-auto items-center">
-            <nav class="lg:col-span-8 flex flex-col gap-5">
-                <a href="#mission" class="menu-overlay-link text-4xl sm:text-6xl md:text-7xl font-syne font-bold text-zinc-400 hover:text-neon-green transition-all duration-300 flex items-center justify-between group">
-                    <span>01 // Mission</span>
-                    <span class="text-sm font-mono opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all text-emerald-400">✦ PURPOSE</span>
-                </a>
-                <a href="#wren" class="menu-overlay-link text-4xl sm:text-6xl md:text-7xl font-syne font-bold text-zinc-400 hover:text-neon-green transition-all duration-300 flex items-center justify-between group">
-                    <span>02 // Who is Wren</span>
-                    <span class="text-sm font-mono opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all text-emerald-400">✦ ABOUT</span>
-                </a>
-                <a href="#projects" class="menu-overlay-link text-4xl sm:text-6xl md:text-7xl font-syne font-bold text-zinc-400 hover:text-neon-green transition-all duration-300 flex items-center justify-between group">
-                    <span>03 // Projects</span>
-                    <span class="text-sm font-mono opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all text-emerald-400">✦ SHOWCASE</span>
-                </a>
-                <a href="#contact" class="menu-overlay-link text-4xl sm:text-6xl md:text-7xl font-syne font-bold text-emerald-400 hover:text-neon-green transition-all duration-300 flex items-center justify-between group">
-                    <span>04 // Contact</span>
-                    <span class="text-sm font-mono opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all text-emerald-400">✦ REACH OUT</span>
-                </a>
-            </nav>
-
-            <div class="lg:col-span-4 rounded-square-card p-8 flex flex-col gap-6">
-                <div>
-                    <h4 class="text-xs uppercase tracking-wider text-emerald-400 font-mono mb-1">Direct Contact Hub</h4>
-                    <p class="text-zinc-400 text-xs font-mono">Jump straight to all contact details at the bottom section of the page.</p>
-                </div>
-                <div class="space-y-3 font-mono text-xs">
-                    <div class="p-3 rounded-xl bg-black/60 border border-emerald-500/20 flex items-center gap-3">
-                        <i class="fa-solid fa-location-dot text-neon-green"></i>
-                        <span class="text-zinc-200">Ile-de-France (France)</span>
-                    </div>
-                    <div class="p-3 rounded-xl bg-black/60 border border-emerald-500/20 flex items-center gap-3">
-                        <i class="fa-regular fa-envelope text-neon-green"></i>
-                        <span class="text-zinc-200">contact@wrenzagency.com</span>
-                    </div>
-                </div>
-                <a href="#contact" class="w-full py-3 rounded-xl bg-neon-green text-black font-syne font-bold text-xs uppercase tracking-wider text-center block hover:bg-emerald-300 transition-colors">
-                    Go To Bottom Contact Section
-                </a>
-            </div>
-        </div>
-
-        <div class="overlay-bottom max-w-7xl mx-auto w-full flex justify-between items-center pt-6 border-t border-zinc-900 text-zinc-600 text-xs font-mono">
-            <span>© WRENZ AGENCY. ALL RIGHTS RESERVED.</span>
-            <span class="text-emerald-500">ILE-DE-FRANCE (FRANCE)</span>
-        </div>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </nav>
 
-    <main>
-        <!-- SECTION 1: MISSION -->
-        <section id="mission" class="section-padding min-h-screen pt-36 sm:pt-44 flex items-center justify-center overflow-hidden">
-            <div class="glow-orb top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-            
-            <div class="container-custom relative z-10 text-center">
-                <!-- Tagline Badge -->
-                <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-emerald-950/70 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-mono tracking-wider uppercase mb-8 shadow-neon-sm">
-                    <span class="w-2.5 h-2.5 rounded-full bg-neon-green animate-pulse"></span>
-                    <span>WRENZ AGENCY</span>
-                    <span class="text-zinc-600">|</span>
-                    <span class="text-emerald-400 font-semibold">SECTION 01: MISSION</span>
-                </div>
+  <main>
 
-                <!-- Main Mission Headline -->
-                <h1 class="font-syne text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-tight sm:leading-none mb-10">
-                    Designing <span class="gradient-text-emerald">Digital Innovation</span> &<br class="hidden sm:inline">
-                    <span class="gradient-text-neon">Cutting-Edge Web Experiences</span>.
-                </h1>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="accueil">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
 
-                <!-- Mission Card Block (Nice Rounded Square Hero Container) -->
-                <div class="max-w-4xl mx-auto rounded-square-card text-center mb-16 p-8 sm:p-12">
-                    <p class="text-zinc-200 text-lg sm:text-2xl font-normal leading-relaxed">
-                        Wrenz Agency is dedicated to crafting high-performance digital solutions, seamless visual design systems, and modern web applications with speed and precision.
-                    </p>
-                </div>
+      <div class="hero__content">
+        <a href="https://m365.cloud.microsoft/chat" target="_blank" rel="noopener noreferrer" class="hero__badge scale-in">
+          <span class="hero__badge-dot" aria-hidden="true"></span>
+          Microsoft Copilot Chat
+        </a>
 
-                <!-- Mission Pillars (3 Rounded Square Cards) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                    <div class="rounded-square-card group">
-                        <div class="rounded-square-icon mb-6">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
-                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest block mb-2">01 // PILLAR</span>
-                        <h3 class="font-syne text-xl font-bold text-white mb-2">Mission Pillar 01</h3>
-                        <p class="text-zinc-500 text-xs font-mono">To be added</p>
-                    </div>
+        <h1 class="hero__title fade-in">Vos Agents IA</h1>
 
-                    <div class="rounded-square-card group">
-                        <div class="rounded-square-icon mb-6">
-                            <i class="fa-solid fa-compass"></i>
-                        </div>
-                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest block mb-2">02 // PILLAR</span>
-                        <h3 class="font-syne text-xl font-bold text-white mb-2">Mission Pillar 02</h3>
-                        <p class="text-zinc-500 text-xs font-mono">To be added</p>
-                    </div>
+        <p class="hero__subtitle fade-in">
+          Découvrez et accédez aux assistants intelligents développés avec
+          Microsoft Copilot Studio pour simplifier votre quotidien.
+        </p>
 
-                    <div class="rounded-square-card group">
-                        <div class="rounded-square-icon mb-6">
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest block mb-2">03 // PILLAR</span>
-                        <h3 class="font-syne text-xl font-bold text-white mb-2">Mission Pillar 03</h3>
-                        <p class="text-zinc-500 text-xs font-mono">To be added</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 2: WHO IS WREN -->
-        <section id="wren" class="section-padding bg-zinc-950/60 border-t border-zinc-900">
-            <div class="container-custom">
-                <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="section-tag">/// SECTION 02: WHO IS WREN</span>
-                    <h2 class="font-syne text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">
-                        Who is <span class="gradient-text-neon">Wren</span>
-                    </h2>
-                    <p class="text-zinc-400 text-base sm:text-lg">
-                        Learn about Wren behind Wrenz Agency.
-                    </p>
-                </div>
-
-                <!-- Main Who is Wren Layout in Rounded Square Cards -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
-                    <!-- Left: Placeholder for Wren's Photo in a Rounded Square Card -->
-                    <div class="lg:col-span-5 flex">
-                        <div class="card-placeholder w-full group flex flex-col justify-center items-center">
-                            <div class="w-24 h-24 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
-                                <i class="fa-regular fa-user text-4xl"></i>
-                            </div>
-                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">PHOTO PLACEHOLDER</span>
-                            <h3 class="font-syne text-xl font-bold text-zinc-400 group-hover:text-white transition-colors">Photo of Wren</h3>
-                            <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
-                        </div>
-                    </div>
-
-                    <!-- Right: Who is Wren Bio Details in Rounded Square Card -->
-                    <div class="lg:col-span-7 flex">
-                        <div class="rounded-square-card w-full p-8 sm:p-10 flex flex-col justify-center space-y-6">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 font-mono text-xs uppercase tracking-wider w-fit">
-                                <i class="fa-solid fa-id-card text-neon-green"></i>
-                                <span>WHO IS WREN</span>
-                            </div>
-
-                            <h3 class="font-syne text-2xl sm:text-4xl font-bold text-white">
-                                About <span class="gradient-text-emerald">Wren</span>
-                            </h3>
-
-                            <p class="text-zinc-300 text-base sm:text-lg leading-relaxed font-mono">
-                                Information about Wren to be added.
-                            </p>
-
-                            <div class="p-4 rounded-xl bg-black/40 border border-dashed border-emerald-500/30 font-mono text-xs text-zinc-500">
-                                <span class="text-emerald-400 font-bold block mb-1">/// NOTE:</span>
-                                Additional bio, details, and background story for Wren will be inserted here.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wren's Feature Cards (3 Harmonious Empty Rounded Square Placeholders) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="card-placeholder group">
-                        <div class="w-16 h-16 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
-                            <i class="fa-solid fa-circle-info text-2xl"></i>
-                        </div>
-                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">DETAIL 01</span>
-                        <h4 class="font-syne text-lg font-bold text-zinc-400 group-hover:text-white transition-colors">Wren Detail 01</h4>
-                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
-                    </div>
-
-                    <div class="card-placeholder group">
-                        <div class="w-16 h-16 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
-                            <i class="fa-solid fa-circle-info text-2xl"></i>
-                        </div>
-                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">DETAIL 02</span>
-                        <h4 class="font-syne text-lg font-bold text-zinc-400 group-hover:text-white transition-colors">Wren Detail 02</h4>
-                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
-                    </div>
-
-                    <div class="card-placeholder group">
-                        <div class="w-16 h-16 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
-                            <i class="fa-solid fa-circle-info text-2xl"></i>
-                        </div>
-                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">DETAIL 03</span>
-                        <h4 class="font-syne text-lg font-bold text-zinc-400 group-hover:text-white transition-colors">Wren Detail 03</h4>
-                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 3: PROJECTS -->
-        <section id="projects" class="section-padding border-t border-zinc-900">
-            <div class="container-custom">
-                <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="section-tag">/// SECTION 03: PROJECTS</span>
-                    <h2 class="font-syne text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">
-                        Previous <span class="gradient-text-emerald">Projects</span>
-                    </h2>
-                    <p class="text-zinc-400 text-base sm:text-lg">
-                        Our portfolio of delivered applications and client work.
-                    </p>
-                </div>
-
-                <!-- Projects Grid (3 Harmonious Empty Placeholder Rounded Squares) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Project Placeholder 1 -->
-                    <div class="card-placeholder group">
-                        <div class="w-20 h-20 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
-                            <i class="fa-solid fa-layer-group text-3xl"></i>
-                        </div>
-                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">PROJECT 01</span>
-                        <h3 class="font-syne text-xl font-bold text-zinc-400 group-hover:text-white transition-colors">Project 01</h3>
-                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
-                    </div>
-
-                    <!-- Project Placeholder 2 -->
-                    <div class="card-placeholder group">
-                        <div class="w-20 h-20 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
-                            <i class="fa-solid fa-layer-group text-3xl"></i>
-                        </div>
-                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">PROJECT 02</span>
-                        <h3 class="font-syne text-xl font-bold text-zinc-400 group-hover:text-white transition-colors">Project 02</h3>
-                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
-                    </div>
-
-                    <!-- Project Placeholder 3 -->
-                    <div class="card-placeholder group">
-                        <div class="w-20 h-20 rounded-2xl bg-black border border-emerald-500/20 flex items-center justify-center text-zinc-600 mb-6 group-hover:text-neon-green group-hover:border-emerald-500/50 transition-colors">
-                            <i class="fa-solid fa-layer-group text-3xl"></i>
-                        </div>
-                        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">PROJECT 03</span>
-                        <h3 class="font-syne text-xl font-bold text-zinc-400 group-hover:text-white transition-colors">Project 03</h3>
-                        <p class="text-zinc-600 text-xs font-mono mt-2">To be added</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: ALL CONTACT INFORMATION (BOTTOM SECTION OF THE PAGE) -->
-        <section id="contact" class="section-padding bg-zinc-950/90 border-t border-zinc-900">
-            <div class="container-custom">
-                <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="section-tag">/// SECTION 04: CONTACT INFORMATION</span>
-                    <h2 class="font-syne text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">
-                        Contact <span class="gradient-text-neon">Wrenz Agency</span>
-                    </h2>
-                    <p class="text-zinc-400 text-base sm:text-lg">
-                        Get in touch with our team for inquiries and project discussions.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-                    <!-- Left: All Contact Details in Nice Rounded Square Cards -->
-                    <div class="lg:col-span-6 space-y-5">
-                        <div class="rounded-square-card p-6 flex items-center gap-5 group">
-                            <div class="rounded-square-icon shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-emerald-400 font-mono uppercase tracking-wider mb-1">LOCATION</div>
-                                <div class="text-white text-lg font-bold font-syne">Ile-de-France (France)</div>
-                            </div>
-                        </div>
-
-                        <div class="rounded-square-card p-6 flex items-center gap-5 group">
-                            <div class="rounded-square-icon shrink-0">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-emerald-400 font-mono uppercase tracking-wider mb-1">PHONE</div>
-                                <div class="text-white text-lg font-bold font-syne">+33 7xxxxxxxx</div>
-                            </div>
-                        </div>
-
-                        <div class="rounded-square-card p-6 flex items-center gap-5 group">
-                            <div class="rounded-square-icon shrink-0">
-                                <i class="fa-regular fa-envelope"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-emerald-400 font-mono uppercase tracking-wider mb-1">EMAIL</div>
-                                <div class="text-white text-lg font-bold font-syne">contact@wrenzagency.com</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Direct Message Form inside Rounded Square Card Container -->
-                    <div class="lg:col-span-6 rounded-square-card p-8 sm:p-10">
-                        <h3 class="font-syne text-2xl font-bold text-white mb-2">Send A Message</h3>
-                        <p class="text-zinc-400 text-xs font-mono mb-6">Fill out the form below to contact us.</p>
-
-                        <form id="contact-form" class="space-y-4">
-                            <div>
-                                <label for="user-name" class="block text-xs font-mono text-zinc-400 mb-2">YOUR NAME</label>
-                                <input type="text" id="user-name" required placeholder="Name..." class="w-full px-4 py-3.5 rounded-xl bg-black/80 border border-zinc-800 text-white text-sm focus:outline-none focus:border-emerald-400 transition-colors font-mono">
-                            </div>
-
-                            <div>
-                                <label for="user-email" class="block text-xs font-mono text-zinc-400 mb-2">EMAIL ADDRESS</label>
-                                <input type="email" id="user-email" required placeholder="email@example.com" class="w-full px-4 py-3.5 rounded-xl bg-black/80 border border-zinc-800 text-white text-sm focus:outline-none focus:border-emerald-400 transition-colors font-mono">
-                            </div>
-
-                            <div>
-                                <label for="user-message" class="block text-xs font-mono text-zinc-400 mb-2">MESSAGE</label>
-                                <textarea id="user-message" rows="4" required placeholder="Your message..." class="w-full px-4 py-3.5 rounded-xl bg-black/80 border border-zinc-800 text-white text-sm focus:outline-none focus:border-emerald-400 transition-colors font-mono"></textarea>
-                            </div>
-
-                            <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-neon-green text-black font-syne font-bold text-sm uppercase tracking-wider hover:bg-emerald-300 transition-all duration-300 shadow-neon flex items-center justify-center gap-3">
-                                <span>Send Message</span>
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-                        </form>
-
-                        <div id="form-success" class="hidden mt-6 p-6 rounded-2xl bg-emerald-950/90 border border-emerald-400 text-center">
-                            <i class="fa-solid fa-circle-check text-neon-green text-4xl mb-3"></i>
-                            <h4 class="font-syne text-xl font-bold text-white">Message Sent</h4>
-                            <p class="text-zinc-300 text-xs font-mono mt-2">Thank you. Your message has been sent successfully.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black py-12 border-t border-zinc-900">
-        <div class="container-custom flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-3">
-                <span class="w-8 h-8 rounded-lg bg-emerald-950 border border-emerald-500/30 flex items-center justify-center">
-                    <span class="w-2.5 h-2.5 bg-neon-green rounded-sm transform rotate-45"></span>
-                </span>
-                <span class="font-syne text-lg font-bold tracking-tight text-white">
-                    WRENZ<span class="text-neon-green">.</span>
-                </span>
-            </div>
-
-            <div class="flex gap-8 text-xs font-mono text-zinc-400">
-                <a href="#mission" class="hover:text-neon-green transition-colors">Mission</a>
-                <a href="#wren" class="hover:text-neon-green transition-colors">Who is Wren</a>
-                <a href="#projects" class="hover:text-neon-green transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-neon-green transition-colors">Contact</a>
-            </div>
-
-            <p class="text-xs text-zinc-600 font-mono">© Wrenz Agency. All Rights Reserved.</p>
+        <div class="hero__stats fade-in">
+          <div class="hero__stat">
+            <div class="hero__stat-number blue" id="stat-agents">0</div>
+            <div class="hero__stat-label">Agents</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-number green" id="stat-categories">0</div>
+            <div class="hero__stat-label">Catégories</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-number orange" id="stat-active">0</div>
+            <div class="hero__stat-label">Actifs</div>
+          </div>
         </div>
-    </footer>
 
-    <!-- Main JavaScript File -->
-    <script src="js/main.js"></script>
+        <div class="hero__cta fade-in">
+          <a href="#agents" class="btn btn--primary">
+            Explorer les agents
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CATALOGUE DES AGENTS ===== -->
+    <section class="section" id="agents">
+      <div class="container">
+        <div class="section__header slide-left">
+          <div class="section__eyebrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+            Catalogue
+          </div>
+          <h2 class="section__title">Nos Agents Intelligents</h2>
+          <p class="section__subtitle">
+            Explorez notre catalogue d'agents IA et trouvez l'assistant qui correspond à vos besoins.
+          </p>
+        </div>
+
+        <!-- Search -->
+        <div class="search-container fade-in">
+          <span class="search-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+          <input type="text" class="search-input" id="search-input" placeholder="Rechercher un agent..." aria-label="Rechercher un agent">
+        </div>
+
+        <!-- Category Filters -->
+        <div class="filter-bar" id="filter-bar" role="group" aria-label="Filtres par catégorie"></div>
+
+        <!-- Agents Grid (rendered by JS) -->
+        <div class="agents-grid" id="agents-grid" role="list" aria-label="Liste des agents"></div>
+      </div>
+    </section>
+
+    <!-- ===== LIENS SHAREPOINT ===== -->
+    <section class="section section--alt" id="sharepoint">
+      <div class="container">
+        <div class="section__header slide-left">
+          <div class="section__eyebrow green">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            SharePoint
+          </div>
+          <h2 class="section__title">Sites de l'entreprise</h2>
+          <p class="section__subtitle">
+            Accédez rapidement aux ressources et sites SharePoint de l'entreprise.
+          </p>
+        </div>
+
+        <!-- SP Grid (rendered by JS) -->
+        <div class="sp-grid" id="sp-grid" role="list" aria-label="Liens SharePoint"></div>
+      </div>
+    </section>
+
+    <!-- ===== DÉMONSTRATIONS VIDÉO ===== -->
+    <section class="section" id="demos">
+      <div class="container">
+        <div class="section__header slide-left">
+          <div class="section__eyebrow orange">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Démonstrations
+          </div>
+          <h2 class="section__title">Vidéos de démonstration</h2>
+          <p class="section__subtitle">
+            Découvrez les agents en action à travers nos vidéos de présentation.
+          </p>
+        </div>
+
+        <!-- Videos Grid (rendered by JS) -->
+        <div class="videos-grid" id="videos-grid" role="list" aria-label="Démonstrations vidéo"></div>
+      </div>
+    </section>
+
+    <!-- ===== NOUVELLES IA ===== -->
+    <section class="section section--alt" id="nouvelles">
+      <div class="container">
+        <div class="section__header slide-left">
+          <div class="section__eyebrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+            Actualités
+          </div>
+          <h2 class="section__title">Nouvelles IA</h2>
+          <p class="section__subtitle">
+            Les dernières actualités et avancées en intelligence artificielle.
+          </p>
+        </div>
+
+        <!-- News content (rendered by JS) -->
+        <div class="news-container scale-in" id="news-content"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <div class="footer__brand-name">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+            Prospectives IA
+          </div>
+          <p class="footer__brand-desc">
+            Portail des agents intelligents développés avec Microsoft Copilot Studio.
+            Simplifiez votre quotidien grâce à l'intelligence artificielle.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer__section-title">Navigation</div>
+          <div class="footer__links">
+            <a href="#accueil" class="footer__link">Accueil</a>
+            <a href="#agents" class="footer__link">Agents IA</a>
+            <a href="#sharepoint" class="footer__link">SharePoint</a>
+            <a href="#demos" class="footer__link">Démonstrations</a>
+            <a href="#nouvelles" class="footer__link">Nouvelles IA</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer__section-title">Ressources</div>
+          <div class="footer__links">
+            <a href="#" class="footer__link" target="_blank" rel="noopener">Copilot Studio</a>
+            <a href="#" class="footer__link" target="_blank" rel="noopener">Documentation</a>
+            <a href="#" class="footer__link" target="_blank" rel="noopener">Support IT</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          © 2025 Prospectives — Tous droits réservés
+        </div>
+        <div class="footer__tech">
+          Propulsé par Microsoft Copilot Studio
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/agents-data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/app.js"></script>
+
 </body>
 </html>
