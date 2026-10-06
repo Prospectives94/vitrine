@@ -3,7 +3,6 @@
    ========================================
    Pour ajouter un agent : ajoutez un objet dans AGENTS_DATA.
    Pour ajouter un lien SharePoint : ajoutez un objet dans SHAREPOINT_LINKS.
-   Pour ajouter une démo vidéo : ajoutez un objet dans DEMO_VIDEOS.
    ======================================== */
 
 const AGENTS_DATA = [
@@ -19,7 +18,6 @@ const AGENTS_DATA = [
     sharepointPageUrl: "https://adminevariste.sharepoint.com/sites/outils-prospectives/SitePages/Assistant-Juridique.aspx",
     docTechniqueUrl: "https://adminevariste.sharepoint.com/:b:/s/outils-prospectives/IQD74LPujjtaQatpsJhuuouRAVWdd9B1ECFlHPpSzRXSLgQ?e=6yumgA",
     docTechniqueName: "201_agent_juridique_technique.pdf",
-    demoVideoUrl: "",
     status: "active",
     tags: ["Réglementation", "Droit", "Marchés publics"]
   },
@@ -35,7 +33,6 @@ const AGENTS_DATA = [
     sharepointPageUrl: "https://adminevariste.sharepoint.com/sites/outils-prospectives/SitePages/Assistant-QSE.aspx",
     docTechniqueUrl: "https://adminevariste.sharepoint.com/:b:/s/outils-prospectives/IQBFu8z8fBF4S5xXSTggfloNAbybaW775RNYa0NHph4VaFo?e=TvOvCj",
     docTechniqueName: "501_agent_QSE_technique.pdf",
-    demoVideoUrl: "",
     status: "active",
     tags: ["Qualité", "Sécurité", "Environnement"]
   },
@@ -51,7 +48,6 @@ const AGENTS_DATA = [
     sharepointPageUrl: "https://adminevariste.sharepoint.com/sites/outils-prospectives/SitePages/IP-FNTP.aspx",
     docTechniqueUrl: "https://adminevariste.sharepoint.com/:b:/s/outils-prospectives/IQCAc5kUZY8LRItTVCFWzmLFAflRLzztZVEYYXWameFy8dk?e=gugewJ",
     docTechniqueName: "803_IP_FNTP.pdf",
-    demoVideoUrl: "",
     status: "active",
     tags: ["Études", "Actualités", "FNTP", "Secteur TP"]
   },
@@ -65,7 +61,6 @@ const AGENTS_DATA = [
     longDesc: "AnalyseDCE exploite Copilot Agent Builder pour analyser en détail vos dossiers de consultation d'entreprises (DCE), extraire les exigences clés et simplifier la préparation des réponses aux appels d'offres.",
     embedUrl: "https://m365.cloud.microsoft/chat/?titleId=T_52dfb6a5-a87c-ac1d-0e5c-5cd8eae9aaf5&source=embedded-builder",
     sharepointPageUrl: "https://adminevariste.sharepoint.com/sites/outils-prospectives/SitePages/Analyse-DCE.aspx",
-    demoVideoUrl: "",
     status: "active",
     tags: ["Études", "DCE", "Appels d'offres", "Analyse"]
   },
@@ -79,7 +74,6 @@ const AGENTS_DATA = [
     longDesc: "L'Assistant Travaux est votre compagnon pour la gestion quotidienne des chantiers. Il vous aide à planifier les interventions, suivre l'avancement des travaux, gérer les ressources et résoudre les problèmes opérationnels.",
     embedUrl: "https://adminevariste.sharepoint.com/sites/outils-prospectives/Documents%20partages/Copilot%20Studio%20Agents?id=/sites/outils-prospectives/Documents%20partages/Copilot%20Studio%20Agents/Assistant%20Travaux_copilots_header_a6e65.agent&parent=/sites/outils-prospectives/Documents%20partages/Copilot%20Studio%20Agents",
     sharepointPageUrl: "https://adminevariste.sharepoint.com/sites/outils-prospectives/SitePages/Assistant-Travaux.aspx",
-    demoVideoUrl: "",
     status: "active",
     tags: ["Chantier", "Planification", "Suivi"]
   },
@@ -97,7 +91,6 @@ const AGENTS_DATA = [
     docTechniqueName: "101_agent_RH_technique.pdf",
     docVeilleSocialeUrl: "https://adminevariste.sharepoint.com/:b:/s/outils-prospectives/IQDg110KdvyTQqfT-Aw6qYdLAUDs51m8PRGoGW30-fxDxvY?e=tivHgx",
     docVeilleSocialeName: "108_veille_sociale.pdf",
-    demoVideoUrl: "",
     status: "active",
     tags: ["Congés", "Paie", "Formation"]
   },
@@ -110,7 +103,6 @@ const AGENTS_DATA = [
     shortDesc: "Veille technologique et actualités du secteur pour anticiper les évolutions.",
     longDesc: "PulseIA est votre radar de veille sectorielle et technologique. Il surveille l'actualité industrielle et les dernières avancées en intelligence artificielle pour vous proposer des synthèses et alertes d'actualité.",
     embedUrl: "https://m365.cloud.microsoft/chat/?titleId=T_576309b6-76f2-795c-8462-3d6d4852b16d&source=embedded-builder",
-    demoVideoUrl: "",
     status: "active",
     tags: ["Veille", "Actualités", "Monitoring", "Technologies"]
   },
@@ -123,21 +115,19 @@ const AGENTS_DATA = [
     shortDesc: "Surveillance en temps réel des indicateurs et actualités clés de vos projets.",
     longDesc: "TP_Monitor vous offre une vue d'ensemble en temps réel de vos indicateurs de performance projet et des alertes d'actualité métier. Tableaux de bord, alertes automatiques et analyses de tendances.",
     embedUrl: "https://m365.cloud.microsoft/chat/?titleId=T_f70617f4-31e3-6fd9-7cfe-96f0eef5c3f9&source=embedded-builder",
-    demoVideoUrl: "",
     status: "beta",
     tags: ["KPI", "Monitoring", "Tableaux de bord", "Alertes"]
   },
   {
     id: "clinovia",
-    name: "ClinovIA",
+    name: "ClinovIA_veille",
     category: "Monitoring",
     color: "orange",
     icon: "brain",
     shortDesc: "Veille et analyse prédictive des tendances métier par l'IA.",
-    longDesc: "ClinovIA exploite l'intelligence artificielle pour surveiller les évolutions sectorielles, analyser vos données métier et proposer des optimisations prédictives.",
-    embedUrl: "",
-    demoVideoUrl: "",
-    status: "beta",
+    longDesc: "ClinovIA_veille exploite l'intelligence artificielle pour surveiller les évolutions sectorielles, analyser vos données métier et proposer des optimisations prédictives.",
+    embedUrl: "https://m365.cloud.microsoft/chat/?titleId=T_461462e8-f15a-19bf-c0d1-cd2520e417c6&source=embedded-builder",
+    status: "active",
     tags: ["Monitoring", "Veille", "Prédictif", "Data"]
   },
   {
@@ -148,8 +138,7 @@ const AGENTS_DATA = [
     icon: "radar",
     shortDesc: "Détection, veille et surveillance en temps réel des appels d'offres pertinents.",
     longDesc: "AO_Radar scanne en continu les plateformes d'appels d'offres pour détecter les opportunités correspondant à vos critères. Monitoring automatisé, scoring de pertinence et alertes en temps réel.",
-    embedUrl: "",
-    demoVideoUrl: "",
+    embedUrl: "https://m365.cloud.microsoft/chat/?titleId=T_eae51828-2e97-4307-edac-f8032d2f0f76&source=embedded-builder",
     status: "active",
     tags: ["Monitoring", "Appels d'offres", "Veille", "Scoring"]
   },
@@ -161,23 +150,9 @@ const AGENTS_DATA = [
     icon: "gavel",
     shortDesc: "Assistant juridique spécialisé droit des marchés publics et travaux.",
     longDesc: "TP_JuriTravaux est spécialisé dans le droit des marchés publics de travaux. Il vous assiste dans la rédaction de mémoires, l'analyse de CCAP/CCTP, la gestion des réclamations et la compréhension des clauses contractuelles.",
-    embedUrl: "",
-    demoVideoUrl: "",
+    embedUrl: "https://m365.cloud.microsoft/chat/?titleId=T_8926daa1-3aa2-11fd-46fb-7cdb42f423c2&source=embedded-builder",
     status: "active",
     tags: ["Marchés publics", "Contrats", "Réclamations"]
-  },
-  {
-    id: "agent-juridique",
-    name: "Agent juridique",
-    category: "Juridique",
-    color: "blue",
-    icon: "document",
-    shortDesc: "Recherche documentaire juridique et aide à la rédaction de documents légaux.",
-    longDesc: "L'Agent juridique vous accompagne dans la recherche documentaire juridique et la rédaction de documents légaux. Il peut analyser des textes de loi, préparer des synthèses et vous aider à rédiger des courriers et notes juridiques.",
-    embedUrl: "https://adminevariste.sharepoint.com/sites/outils-prospectives/Documents%20partages/Copilot%20Studio%20Agents?id=/sites/outils-prospectives/Documents%20partages/Copilot%20Studio%20Agents/Agent%20IA_copilots_header_9c81b.agent&parent=/sites/outils-prospectives/Documents%20partages/Copilot%20Studio%20Agents",
-    demoVideoUrl: "",
-    status: "active",
-    tags: ["Documentation", "Rédaction", "Analyse"]
   },
   {
     id: "tp-compagnonqse",
@@ -187,8 +162,7 @@ const AGENTS_DATA = [
     icon: "clipboard",
     shortDesc: "Compagnon terrain pour les contrôles QSE et le reporting en mobilité.",
     longDesc: "TP_CompagnonQSE est conçu pour une utilisation terrain. Il vous accompagne lors des visites de chantier pour les contrôles qualité, sécurité et environnement, avec un reporting simplifié et des check-lists interactives.",
-    embedUrl: "",
-    demoVideoUrl: "",
+    embedUrl: "https://m365.cloud.microsoft/chat/?titleId=T_41b7f3f4-5c65-d43c-7fb3-dc9a59842fff&source=embedded-builder",
     status: "active",
     tags: ["Terrain", "Contrôles", "Check-lists"]
   }
@@ -198,7 +172,7 @@ const AGENTS_DATA = [
 const SHAREPOINT_LINKS = [
   {
     id: "compilation-outils-prospectives",
-    name: "Compilation des Outils Prospectives",
+    name: "Catalogue des outils",
     description: "Page d'accueil du portail SharePoint Outils Prospectives",
     url: "https://adminevariste.sharepoint.com/sites/outils-prospectives",
     icon: "compass"
@@ -226,7 +200,7 @@ const SHAREPOINT_LINKS = [
   },
   {
     id: "sp-analyse-dce",
-    name: "Document de Consultation des Entreprises",
+    name: "DCE - Consultations",
     description: "Page SharePoint de l'agent Analyse DCE",
     url: "https://adminevariste.sharepoint.com/sites/outils-prospectives/SitePages/Analyse-DCE.aspx",
     icon: "document"
@@ -261,33 +235,6 @@ const SHAREPOINT_LINKS = [
   }
 ];
 
-/* ---- Démonstrations vidéo ---- */
-const DEMO_VIDEOS = [
-  {
-    id: "demo-assistant-rh",
-    title: "Démonstration Assistant RH",
-    agentName: "Assistant RH",
-    thumbnailColor: "orange",
-    videoUrl: "",
-    duration: "3:45"
-  },
-  {
-    id: "demo-ao-radar",
-    title: "Démonstration AO_Radar",
-    agentName: "AO_Radar",
-    thumbnailColor: "orange",
-    videoUrl: "",
-    duration: "5:12"
-  },
-  {
-    id: "demo-assistant-qse",
-    title: "Démonstration Assistant QSE",
-    agentName: "Assistant QSE",
-    thumbnailColor: "green",
-    videoUrl: "",
-    duration: "4:30"
-  }
-];
 
 /* ---- Configuration générale ---- */
 const SITE_CONFIG = {

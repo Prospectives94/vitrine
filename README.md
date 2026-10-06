@@ -16,8 +16,7 @@ Le portail offre une interface utilisateur haut de gamme avec un design sombre (
    - **Canaux Web Copilot Studio** : Affichage d'une fenêtre modale tchat intégrée via `<iframe>`.
 4. **Compteurs Statistiques Animés** : Animation dynamique au chargement comptabilisant le nombre d'agents total, le nombre de catégories et le nombre d'agents actifs.
 5. **Ressources SharePoint de l'entreprise** : Raccourcis visuels vers les portails et sites SharePoint internes de Prospectives.
-6. **Vidéos de Démo** : Galerie de démonstrations vidéo pour voir les agents en action (ouverture dans une modale vidéo).
-7. **Fil d'actualité IA** : Section dédiée affichant les dernières actualités IA (intégrable avec une liste SharePoint).
+6. **Fil d'actualité IA** : Section dédiée affichant les dernières actualités IA (intégrable avec une liste SharePoint).
 
 ---
 
@@ -25,12 +24,12 @@ Le portail offre une interface utilisateur haut de gamme avec un design sombre (
 
 | Catégorie | Couleur | Agents inclus | Description & Focus |
 | :--- | :--- | :--- | :--- |
-| **Juridique** | Bleu | Assistant Juridique, TP_JuriTravaux, Agent juridique | Réglementation, marchés publics, droit du travail et réclamations. |
+| **Juridique** | Bleu | Assistant Juridique, TP_JuriTravaux | Réglementation, marchés publics, droit du travail et réclamations. |
 | **QSE** | Vert | Assistant QSE, TP_CompagnonQSE | Procédures qualité, sécurité, environnement et contrôles terrain. |
 | **Ressources Humaines** | Orange | Assistant RH | Congés, paie, formations et conventions collectives. |
 | **Travaux** | Bleu | Assistant Travaux | Suivi de chantier, planification et gestion des opérations. |
 | **Études** | Bleu | Chatbot FNTP, AnalyseDCE | Documentation FNTP et analyse automatique des dossiers de consultation (DCE). |
-| **Monitoring** | Orange | AO_Radar, PulseIA, ClinovIA, TP_Monitor | Surveillance des appels d'offres, veille technologique, actualités et KPI projet. |
+| **Monitoring** | Orange | AO_Radar, PulseIA, ClinovIA_veille, TP_Monitor | Surveillance des appels d'offres, veille technologique, actualités et KPI projet. |
 
 ---
 
@@ -46,7 +45,7 @@ Le projet est structuré de façon modulaire et utilise uniquement des technolog
     *   [css/components.css](css/components.css) : Styles des cartes, boutons, cartes de lancement M365, modales et recherche.
     *   [css/layout.css](css/layout.css) : Structure générale de mise en page (grilles, sections, conteneurs).
 *   **[js/](js/)** : Logique JavaScript dynamique.
-    *   [js/agents-data.js](js/agents-data.js) : Base de données centrale (configuration des 13 agents, liens SharePoint et vidéos).
+    *   [js/agents-data.js](js/agents-data.js) : Base de données centrale (configuration des agents et liens SharePoint).
     *   [js/components.js](js/components.js) : Générateurs de cartes, modales interactives et bibliothèque d'icônes SVG.
     *   [js/app.js](js/app.js) : Initialisation globale, moteur de recherche, filtres et événements.
 *   **[pages/](pages/)** :

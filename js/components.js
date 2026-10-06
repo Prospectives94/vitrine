@@ -134,28 +134,6 @@ function createSharePointCard(link) {
   `;
 }
 
-/* ---- Create Video Card HTML ---- */
-function createVideoCard(video) {
-  return `
-    <div class="video-card fade-in" id="video-${video.id}">
-      <div class="video-card__thumbnail" onclick="openVideoModal('${video.videoUrl}', '${video.title}')">
-        <div class="video-card__thumbnail-bg ${video.thumbnailColor}">
-          ${getIcon("copilot")}
-        </div>
-        <div class="video-card__play">
-          <div class="video-card__play-icon">
-            ${getIcon("play")}
-          </div>
-        </div>
-        <span class="video-card__duration">${video.duration}</span>
-      </div>
-      <div class="video-card__info">
-        <div class="video-card__title">${video.title}</div>
-        <div class="video-card__agent">${video.agentName}</div>
-      </div>
-    </div>
-  `;
-}
 
 /* ---- Create Filter Button HTML ---- */
 function createFilterButton(category, isActive) {

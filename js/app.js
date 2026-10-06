@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function initApp() {
   renderAgents();
   renderSharePointLinks();
-  renderVideos();
   renderNews();
   initFilters();
   initSearch();
@@ -34,21 +33,7 @@ function renderSharePointLinks() {
   grid.innerHTML = SHAREPOINT_LINKS.map(createSharePointCard).join("");
 }
 
-function renderVideos() {
-  const grid = document.getElementById("videos-grid");
-  if (!grid) return;
 
-  if (DEMO_VIDEOS.length === 0) {
-    grid.innerHTML = `
-      <div class="empty-state" style="grid-column: 1/-1;">
-        <div class="empty-state__icon">🎬</div>
-        <div class="empty-state__text">Les démonstrations vidéo seront bientôt disponibles.</div>
-      </div>`;
-    return;
-  }
-
-  grid.innerHTML = DEMO_VIDEOS.map(createVideoCard).join("");
-}
 
 function renderNews() {
   const container = document.getElementById("news-content");
@@ -294,47 +279,7 @@ function openAgentModal(agentId) {
   document.addEventListener("keydown", handleEscKey);
 }
 
-function openVideoModal(videoUrl, title) {
-  if (!videoUrl) {
-    // No video URL configured — show placeholder
-    let overlay = document.getElementById("modal-overlay");
-    if (!overlay) {
-      overlay = document.createElement("div");
-      overlay.id = "modal-overlay";
-      overlay.className = "modal-overlay";
-      overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) closeModal();
-      });
-      document.body.appendChild(overlay);
-    }
 
-    overlay.innerHTML = `
-      <div class="modal">
-        <div class="modal__header">
-          <div class="modal__title">${title || "Vidéo"}</div>
-          <button class="modal__close" onclick="closeModal()" aria-label="Fermer">
-            ${getIcon("close")}
-          </button>
-        </div>
-        <div class="modal__body">
-          <div class="modal__placeholder">
-            <div class="modal__placeholder-icon">🎬</div>
-            <div class="modal__placeholder-text">La vidéo de démonstration n'est pas encore disponible.</div>
-            <div class="modal__placeholder-hint">Ajoutez l'URL dans le fichier agents-data.js</div>
-          </div>
-        </div>
-      </div>
-    `;
-
-    requestAnimationFrame(() => overlay.classList.add("active"));
-    document.body.style.overflow = "hidden";
-    document.addEventListener("keydown", handleEscKey);
-    return;
-  }
-
-  // Open video URL in new tab (or embed if YouTube/Stream)
-  window.open(videoUrl, "_blank");
-}
 
 function closeModal() {
   const overlay = document.getElementById("modal-overlay");
