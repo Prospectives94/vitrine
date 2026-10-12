@@ -119,18 +119,6 @@ const AGENTS_DATA = [
     tags: ["KPI", "Monitoring", "Tableaux de bord", "Alertes"]
   },
   {
-    id: "clinovia",
-    name: "ClinovIA_veille",
-    category: "Monitoring",
-    color: "orange",
-    icon: "brain",
-    shortDesc: "Veille et analyse prédictive des tendances métier par l'IA.",
-    longDesc: "ClinovIA_veille exploite l'intelligence artificielle pour surveiller les évolutions sectorielles, analyser vos données métier et proposer des optimisations prédictives.",
-    embedUrl: "https://m365.cloud.microsoft/chat/?titleId=T_461462e8-f15a-19bf-c0d1-cd2520e417c6&source=embedded-builder",
-    status: "active",
-    tags: ["Monitoring", "Veille", "Prédictif", "Data"]
-  },
-  {
     id: "ao-radar",
     name: "AO_Radar",
     category: "Monitoring",
@@ -222,7 +210,7 @@ const SHAREPOINT_LINKS = [
   {
     id: "sp-veille-technologique",
     name: "Veille Technologique",
-    description: "Page SharePoint de Veille Technologique (PulseIA & ClinovIA)",
+    description: "Page SharePoint de Veille Technologique (PulseIA)",
     url: "",
     icon: "sparkles"
   },
