@@ -29,7 +29,7 @@ Le portail offre une interface utilisateur haut de gamme avec un design sombre (
 | **Ressources Humaines** | Orange | Assistant RH | Congés, paie, formations et conventions collectives. |
 | **Travaux** | Bleu | Assistant Travaux | Suivi de chantier, planification et gestion des opérations. |
 | **Études** | Bleu | Chatbot FNTP, AnalyseDCE | Documentation FNTP et analyse automatique des dossiers de consultation (DCE). |
-| **Monitoring** | Orange | AO_Radar, PulseIA, ClinovIA_veille, TP_Monitor | Surveillance des appels d'offres, veille technologique, actualités et KPI projet. |
+| **Monitoring** | Orange | AO_Radar, PulseIA, TP_Monitor | Surveillance des appels d'offres, veille technologique, actualités et KPI projet. |
 
 ---
 
